@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full Stack Development - My ePortfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">My ePortfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+          <li class="nav-item"><a class="nav-link" href="bootstrap.html">Bootstrap</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container main-content pt-5 mt-5">
+    <header class="text-center mb-5">
+      <h1 class="display-4 fw-bold">Full Stack Development</h1>
+      <p class="lead text-muted">Learn how websites work from front to back.</p>
+    </header>
+
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+
+        <!-- What is Full Stack -->
+        <section class="mb-5">
+          <h2 class="fw-bold">What is Full Stack Development?</h2>
+          <p>Full stack development means building both the front part (what users see) and the back part (how it works) of a website. A full stack developer knows how to do both jobs.</p>
+
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Main Parts of Full Stack</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Front-end:</strong> HTML, CSS, JavaScript, React</li>
+                <li class="list-group-item"><strong>Back-end:</strong> Node.js, Python, PHP, APIs</li>
+                <li class="list-group-item"><strong>DevOps:</strong> Git, Hosting, Cloud tools</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Frontend Example -->
+        <section class="mb-5">
+          <h2 class="fw-bold">Front-end Example</h2>
+          <p>This is a simple form that lets users enter their name and email.</p>
+
+          <pre><code class="language-html">
+&lt;form id="userForm"&gt;
+  &lt;label&gt;Name: &lt;/label&gt;
+  &lt;input type="text" id="name" required /&gt;&lt;br&gt;
+  &lt;label&gt;Email: &lt;/label&gt;
+  &lt;input type="email" id="email" required /&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p id="output"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  document.getElementById("userForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    document.getElementById("output").innerText = "Name: " + name + ", Email: " + email;
+  });
+&lt;/script&gt;
+          </code></pre>
+        </section>
+
+        <!-- Backend Example -->
+        <section class="mb-5">
+          <h2 class="fw-bold">Back-end Example (Node.js)</h2>
+          <p>This code runs on a server. It gives user data when asked.</p>
+
+          <pre><code class="language-js">
+// Simple server using Express
+const express = require('express');
+const app = express();
+
+const users = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' }
+];
+
+app.get('/api/users', (req, res) => {
+  res.json(users);
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+          </code></pre>
+        </section>
+
+        <!-- Database Example -->
+        <section class="mb-5">
+          <h2 class="fw-bold">Database Example (MongoDB)</h2>
+          <p>This code connects to a MongoDB database, adds a user, and shows all users.</p>
+
+          <pre><code class="language-js">
+// MongoDB example with Node.js
+const { MongoClient } = require('mongodb');
+
+async function main() {
+  const client = new MongoClient('mongodb://localhost:27017');
+
+  try {
+    await client.connect();
+    const db = client.db('myDatabase');
+    const users = db.collection('users');
+
+    // Add one user
+    await users.insertOne({ name: 'John', email: 'john@example.com' });
+
+    // Show all users
+    const result = await users.find().toArray();
+    console.log(result);
+  } finally {
+    await client.close();
+  }
+}
+
+main().catch(console.error);
+          </code></pre>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3 mt-5">
+    <p>&copy; 2025 My ePortfolio. Keep learning and building!</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

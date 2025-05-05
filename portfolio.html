@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Learning Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    .header {
+      background-color: #004080;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .navbar {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 20px;
+    }
+
+    .section-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .section-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .section-box h5 {
+      margin-top: 0;
+      color: #004080;
+    }
+
+    .section-box p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .section-box button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .section-box button:hover {
+      background-color: #0066cc;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1><strong>Welcome to My Learning Portfolio</strong></h1>
+    <nav class="navbar">
+      <a href="fullstack.html">Full Stack</a>
+      <a href="css.html">CSS</a>
+      <a href="Html.html">HTML</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </nav>
+  </header>
+
+  <section class="content">
+    <div class="section-box">
+      <h5>Full Stack</h5>
+      <p>Learn how websites are built from start to end – both the design and the logic.</p>
+      <button onclick="navigateTo('fullstack.html')">View</button>
+    </div>
+
+    <div class="section-box">
+      <h5>CSS</h5>
+      <p>Make your web pages look better with colors, spacing, and styles.</p>
+      <button onclick="navigateTo('css.html')">View</button>
+    </div>
+
+    <div class="section-box">
+      <h5>HTML</h5>
+      <p>See how web pages are made using simple tags and layout blocks.</p>
+      <button onclick="navigateTo('Html.html')">View</button>
+    </div>
+
+    <div class="section-box">
+      <h5>Bootstrap</h5>
+      <p>Use ready-made tools to build nice and mobile-friendly pages faster.</p>
+      <button onclick="navigateTo('bootstrap.html')">View</button>
+    </div>
+
+    <div class="section-box">
+      <h5>JavaScript</h5>
+      <p>Make your website more fun and smart by adding buttons, forms, and actions.</p>
+      <button onclick="navigateTo('javascript.html')">View</button>
+    </div>
+  </section>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
